@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Prics" Class="ProjektELODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVER-SQL;Initial Catalog=Prics;Persist Security Info=True;User ID=prics_eb" SettingsObjectName="EBDocu_ELO_Export.Properties.Settings" SettingsPropertyName="PricsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblELONamenProjekteEbene2" Member="tblELONamenProjekteEbene2s">
+    <Type Name="tblELONamenProjekteEbene2">
+      <Column Name="Ebene2NameID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ebene2Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblELONamenProjekteEbene2_tblELONamenProjekteEbene3" Member="tblELONamenProjekteEbene3s" ThisKey="Ebene2NameID" OtherKey="Ebene2NameID" Type="tblELONamenProjekteEbene3" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblELONamenProjekteEbene3" Member="tblELONamenProjekteEbene3s">
+    <Type Name="tblELONamenProjekteEbene3">
+      <Column Name="Ebene2NameID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ebene3NameID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ebene3Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblELONamenProjekteEbene2_tblELONamenProjekteEbene3" Member="tblELONamenProjekteEbene2" ThisKey="Ebene2NameID" OtherKey="Ebene2NameID" Type="tblELONamenProjekteEbene2" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProjekte" Member="tblProjektes">
+    <Type Name="tblProjekte">
+      <Column Name="Projekttyp" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Projektnummer" Type="System.Double" DbType="Float NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Teilprojektnummer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Auftraggeber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Kundennummer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Projektbezeichnung" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjektKurzname" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Anlagenname" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Lieferanschrift" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IngenieurbüroElektro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IngenieurbüroVerfahren" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tutor" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Projektleiter" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LeitungÖrtlich" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Konstrukteur" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SPSProgrammierer" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PLSProgrammierer" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Auftragswert" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AuftragswertMwSt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Auftragseingang" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Abrechnungsart" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Gewährdauer" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="GewährEinbehalt" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Schlußrechnung" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Abnahme" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Nacharbeitsende" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Gewährende" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Projektende" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ProjektsperreDatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Memo" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MemoKaufmann" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MemoGewähr" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MemoAngebot" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Angebotsart" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AngebotsdoppelErforderlich" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AngebotZieltermin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AngebotZielzeit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AngebotSubmission" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AngebotErstellt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AngebotEntscheidungstermin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AngebotBearbeiter" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Angebotspreis" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AngebotspreisMwSt" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AngebotAuftragswahrscheinlichkeit" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Wartungsintervall" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="WartungErsteDatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SpezifischeWerteErforderlich" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenzangabenErforderlich" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ControllingdatenErforderlich" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AnzahlSchaltfelder600" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AnzahlSchaltfelder800" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AnzahlSchaltfelder1200" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AnzahlSchaltfelder" Type="System.Decimal" DbType="Decimal(10,2)" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="AnzahlAntriebe" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LängeKabel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnzahlEA" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LVAnzahlSchaltfelder600" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LVAnzahlSchaltfelder800" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LVAnzahlSchaltfelder1200" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LVAnzahlSchaltfelder" Type="System.Decimal" DbType="Decimal(10,2)" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="LVAnzahlAntriebe" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="LVLängeKabel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LVAnzahlEA" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Einwohnergleichwerte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnzahlFilter" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="MemoSpezifischeWerte" Type="System.String" DbType="NText" CanBeNull="true" />
+      <Column Name="VorgabeStundenProjektleitung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VorgabeStundenKonstruktion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VorgabeStundenWerkstatt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VorgabeStundenMontage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VorgabeStundenSPS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VorgabeStundenPLS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VorgabeStundenSonstiges" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Archiv" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Referenzprojekt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ErstellungAm" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ErstellungBearbeiter" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LetzteBearbeitungAm" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LetzterBearbeiter" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="upsize_ts" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="Anlage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AngebotNachverfolgungDurch" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AngebotAuftragnehmerBieter" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MemoAngebotNachverfolgung" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="KorrekturStundenProjektleitung" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="KorrekturStundenKonstruktion" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="KorrekturStundenWerkstatt" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="KorrekturStundenMontage" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="KorrekturStundenSPS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="KorrekturStundenPLS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="KorrekturStundenSonstiges" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="KalkulationStundenProjektleitung" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="KalkulationStundenKonstruktion" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="KalkulationStundenWerkstatt" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="KalkulationStundenMontage" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="KalkulationStundenSPS" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="KalkulationStundenPLS" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="KalkulationStundenSonstiges" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="AnagebotStatusÄndern" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BautagebuchErforderlich" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Ausführungsort" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ausführungszeit" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AngebotBindefrist" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AnfrageEingangSoll" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Projektbeteiligter1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Projektbeteiligter2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Projektbeteiligter3" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RechtZurMaterialfreigabe" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="WertgrenzeMaterialfreigabe" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LVPfad" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LVOffsetSeiten" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LVAnzSeitenVorbemerkungen" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AnfrageEingangSollUhr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TeilprojektStundenEingabeErforderlich" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LVAnzahlSeiten" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MemoZahlungsplan" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MemoControlling" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="DokumenteAbgelegt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotBundesland" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AngebotAnschrift" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="AngebotGeplanteBeginn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AngebotGeplanteFertigstellung" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AbrechenbareLeistung" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AbrechenbareLeistungDatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LetzteFreigabeStundenDatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LetzteFreigabeStundenDurch" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LetzteFreigabeWESubDatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LetzteFreigabeWESubDurch" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="StundenProjektleitungErledigt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StundenKonstruktionErledigt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StundenWerkstattErledigt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StundenMontageErledigt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StundenSPSErledigt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StundenPLSErledigt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StundenSonstigesErledigt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Fertigung" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AngebotBearbeitungAufwendig" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="KupferPreis" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AngebotBearbeitungFertig" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="WerkstattLieferungDatum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KonstruktionBeginDatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="KonstruktionFertigungDatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SchwerpunktKonstruktion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SchwerpunktWerkstatt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SchwerpunktMontage" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SchwerpunktAutomatisierung" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RessourcenplanungKommentar1" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RessourcenplanungKommentar2" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NachverfolgungErforderlich" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KeineWeitereNachverfolgung" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ErinnerungsMailNachverfolgung" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AngebotsnachverfolgungAPAdresse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AngebotsnachverfolgungAPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AngebotsnachverfolgungAPTelefon" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="SiemensRabattSchlüssel" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="LieferanschriftPLZ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LieferanschriftOrt" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LieferanschriftFirma" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LieferanschriftStrasse" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PLBeginn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PLEnde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="KonstruktionBeginn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="KonstruktionEnde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MontageBeginn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MontageEnde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="WerkstattBeginn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="WerkstattEnde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AutomationBeginn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AutomationEnde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="KonstruktionRessource" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="WerkstattRessource" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AutomationRessource" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="PLRessource" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="MontageRessource" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Projektpfad" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="MemoPL" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="MemoKonstruktion" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="MemoWerkstatt" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="MemoMonatge" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="MemoAutomation" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="DatenblattErforderlich" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DatenblattVorhanden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FirmenID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AngebotGeprüft" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotGeprüftAm" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AngebotGeprüftVon" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Angebotsabschluss" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ProjektBarcode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ELOOrdner" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Angebotsdruckdatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AngebotsbearbeiterUnterschrift" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AnteilIngStunden" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="StundensatzIng" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="StundensatzMonteur" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AnfrageAnsprechpartner" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AnfrageProjektname" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="AnfrageAusführungszeit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AnfrageAngebotsbindefrist" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AnfrageExcelAnhang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageAutoELO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageErinnerungAutoELO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageLieferantGewährleistung" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AnfrageLieferantGewährleistungLieferung" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageLieferantGewährleistungAbnahme" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageLieferantTransportHF" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageLieferantTransportBaustelle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageLieferantMontageMit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageLieferantMontageOhne" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageLieferantMontageIBN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageLieferantPlanungMit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageLieferantPlanungOhne" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageSubGewährleistung" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AnfrageSubGewährleistungLieferung" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageSubGewährleistungAbnahme" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageSubTransportHF" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageSubTransportBaustelle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageSubMontageMit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageSubMontageOhne" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageSubMontageIBN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageSubPlanungMit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnfrageSubPlanungOhne" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotAktuellerBearbeiter" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MassnahmeBezeichnung" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="AngebotExcelExportSperre" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotExcelExportSperreMitarbeiter" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AngebotAllgZuschlag" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AngebotTeuerung" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AngebotExcelBearbeitet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NSAAngebot" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NSAAngebotRechnungsadresse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NSAAngebotLieferadresse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NSAAngebotsDatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NSAAnsprechpartner" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="StundensatzFertigung" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ProjektOrdnerErstellt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OZ2Schritt" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ErhalteneAnzahlung" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AbrechnungssummeKorrektur" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAReaktionszeit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WAJahrespschWartungseinsatz" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAJahrespschVorhaltungStörungsdienst" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAFahrtkostenKomplett" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAFahrtkostenTeilstrecke" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAStundensatzIngenieurTechniker" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAStundensatzMonteur" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAStundensatzBereitschaftsdienst" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAStundensatzKonstruktion" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAKommentar" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="WAStundensatzProgrammierer" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAStundensatzTechniker" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WAPreiserfassungsDatum" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SAPIANummer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SAPPSPNummer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusSAP" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AngebotBearbeiter2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SAPOrt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SAPPLZ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SAPLand" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SAPRealisierungsgrad" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SAPErwartetesErgebnis" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SAPVertragsart" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SAPProduktart" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SAPEndKunde" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SAPUmrechnungMonatlich" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AngebotEinschrenkBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotEinschrenkAuswahl" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AngebotEinschrenkKommentar" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="AngebotLieferumgangBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotLieferumgangAuswahl" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AngebotLieferumgangKommentar" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="AngebotAusführungBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotAusführungAuswahl" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AngebotAusführungKommentar" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="AngebotAbwicklungBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotAbwicklungAuswahl" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AngebotAbwicklungKommentar" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="AngebotMindestpreisBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotMindestpreisKommentar" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="AngebotPauschaleBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotPauschaleKommentar" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="AngebotRisikoBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotRisikoKommentar" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="AngebotPreissteigBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotPreissteigKommentar" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Zahlungsschwierigkeiten" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ProjektSAPangelegt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GewährleistungProjektSAPangelegt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Konto1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Kostenstelle1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PSPNummerVKProjekteÄndern" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AngebotAngebotsbearbeiterErstellt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KundenBestellnummer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SerieSchaltfelderStunden" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AnzahlLieferungen" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FertigungStatus" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="FertigungErforderlich" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FertigungBegonnen" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FertigungBeendet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AnzahlSchaltfelderVOSS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AnzahlSchaltfelderSerie" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AnzahlSchaltfelderLieferungen" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FertigungszeitSerie" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SubmissionErgebAnfordern" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FreigabeIntranet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FreigabeIntranetUpload" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WATage" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="WAProJahr" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="WAMonat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="WARegion" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="WAPreisanpassungRegelungFrei" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="WAProgrammierer" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="WAMonteuer" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="WAMonatErledigtAJ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="WAMonatErledigtVJ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblProjekttypen_tblProjekte" Member="tblProjekttypen" ThisKey="Projekttyp" OtherKey="Projekttyp" Type="tblProjekttypen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProjekttypen" Member="tblProjekttypens">
+    <Type Name="tblProjekttypen">
+      <Column Name="Projekttyp" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Kurzbezeichnung" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ELOName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TypAufBestellung" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InBeständeErträge" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Geschäftsbereich" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SAPKernendkunde" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SAPKernendkundeBezeichnung" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SAPAktivität" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SAPAktivitätBeschreibung" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblProjekttypen_tblProjekte" Member="tblProjektes" ThisKey="Projekttyp" OtherKey="Projekttyp" Type="tblProjekte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEB_ELO_Projektinfo" Member="tblEB_ELO_Projektinfos">
+    <Type Name="tblEB_ELO_Projektinfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Benutzer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Projektnummer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

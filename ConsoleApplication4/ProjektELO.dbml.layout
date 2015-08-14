@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 62.25" name="ProjektELO">
+  <DataContextMoniker Name="/ProjektELODataContext" />
+  <nestedChildShapes>
+    <classShape Id="adf2a59c-addd-4064-bcad-5a38e5a9c7da" absoluteBounds="5.75, 2, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/ProjektELODataContext/tblELONamenProjekteEbene2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa930d5e-c005-4fef-b975-9773b5de6f59" absoluteBounds="5.765, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8f11d457-9f7f-46c4-9700-e668fdc708f6" absoluteBounds="6.25, 3.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ProjektELODataContext/tblELONamenProjekteEbene3" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f209ee73-12b4-43bb-9031-e010eccbec48" absoluteBounds="6.265, 4.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.28125 : 3.19399251302083); (7.28125 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ProjektELODataContext/tblELONamenProjekteEbene2/tblELONamenProjekteEbene2_tblELONamenProjekteEbene3" />
+      <nodes>
+        <classShapeMoniker Id="adf2a59c-addd-4064-bcad-5a38e5a9c7da" />
+        <classShapeMoniker Id="8f11d457-9f7f-46c4-9700-e668fdc708f6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b5a6af17-3a98-4971-9c46-ea300e048ca6" absoluteBounds="0.625, 0.625, 2, 61.3843408203125">
+      <DataClassMoniker Name="/ProjektELODataContext/tblProjekte" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38040002-9d9c-48c7-88b6-2fb32afb4b99" absoluteBounds="0.63999999999999968, 1.085, 1.9700000000000002, 60.8243408203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c700d40-9fc5-455d-b879-00ae52de8964" absoluteBounds="3.375, 1.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ProjektELODataContext/tblProjekttypen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84e17255-4e2a-45b7-a5b2-1eaabf74c5fa" absoluteBounds="3.3899999999999997, 1.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 2.49120198567708); (2.625 : 2.49120198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ProjektELODataContext/tblProjekttypen/tblProjekttypen_tblProjekte" />
+      <nodes>
+        <classShapeMoniker Id="0c700d40-9fc5-455d-b879-00ae52de8964" />
+        <classShapeMoniker Id="b5a6af17-3a98-4971-9c46-ea300e048ca6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7dc171ae-1052-49e7-86f3-8e7ca9350485" absoluteBounds="3.5, 4.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ProjektELODataContext/tblEB_ELO_Projektinfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f94cf004-e102-43ef-ae23-92ad6294bf07" absoluteBounds="3.5149999999999997, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
