@@ -32,13 +32,13 @@ namespace EBDocu_ELO_Export
 
             foreach (string direct in directs)
             {
-                if (!isFolderDocuExist(nameFolderFile(direct), parentId, false))
-                    createFolder(nameFolderFile(direct), parentId);
+                if (!isItemExist(nameItem(direct), parentId, false))
+                    createFolder(nameItem(direct), parentId);
                 files = Directory.GetFiles(direct);
                 foreach (string file in files)
                 {
-                    if (!isFolderDocuExist(nameFolderFile(file), parentId,true))
-                        createDocument(file, String.Format("{0}/{1}", parentId, nameFolderFile(direct)));
+                    if (!isItemExist(nameItem(file), parentId,true))
+                        createDocument(file, String.Format("{0}/{1}", parentId, nameItem(direct)));
                 }
             } 
         }
@@ -59,19 +59,19 @@ namespace EBDocu_ELO_Export
             string parentId = "";
 
             parentId = String.Format("{0}/{1}/{2}/{3}", "ARCPATH:", "Projekte", da.FolderPrTypELOName, da.AnlageName);                                                                                
-            if (!isFolderDocuExist(da.Ebene2Name, parentId, false))
+            if (!isItemExist(da.Ebene2Name, parentId, false))
                     createFolder(da.Ebene2Name, parentId);
             parentId = String.Format("{0}/{1}",parentId, da.Ebene2Name); 
-            if (!isFolderDocuExist(da.Ebene3Name50, parentId, false))
+            if (!isItemExist(da.Ebene3Name50, parentId, false))
                     createFolder(da.Ebene3Name50, parentId);
-            if (!isFolderDocuExist(da.Ebene3Name60, parentId, false))
+            if (!isItemExist(da.Ebene3Name60, parentId, false))
                     createFolder(da.Ebene3Name60, parentId);
             parentId = String.Format("{0}/{1}", parentId, da.Ebene3Name50);
            // parentId = String.Format("ARCPATH:{0}", parentId);
             return parentId;
         }
 
-        static bool isFolderDocuExist(string folder, string actFolder, bool isFile)
+        static bool isItemExist(string folder, string actFolder, bool isFile)
         {
             bool result = false;
             FindInfo fi = new FindInfo();
@@ -97,7 +97,7 @@ namespace EBDocu_ELO_Export
             ed.sord.id = conn.Ix.checkinSord(ed.sord, SordC.mbAll, LockC.NO);
         }
 
-        static string nameFolderFile(string folder)
+        static string nameItem(string folder)
         {
             const String pattern = @"([.\\])";
             String[] elements = Regex.Split(folder, pattern);
@@ -113,7 +113,7 @@ namespace EBDocu_ELO_Export
             //Step 1
             EditInfo ed = conn.Ix.createDoc(actFolder, "", null, EditInfoC.mbSordDocAtt);
             Sord sord = ed.sord;
-            sord.name = nameFolderFile(file);            
+            sord.name = nameItem(file);            
             sord.IDateIso = DateTime.Now.ToString("u");
             //Step 2            
             doc.docs = new DocVersion[] { new DocVersion() };
